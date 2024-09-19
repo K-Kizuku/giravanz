@@ -1,0 +1,19 @@
+{
+  "name": "python",
+  "dockerComposeFile": "compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"],
+      "settings": {
+        "workbench.colorCustomizations": {
+          "titleBar.activeBackground": "#19549C",
+          "titleBar.activeForeground": "#ffffff",
+          "activityBar.background": "#02A7E3",
+          "activityBar.foreground": "#ffffff"
+        }
+      }
+    }
+  }
+}
