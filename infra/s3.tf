@@ -33,7 +33,3 @@ data "aws_iam_policy_document" "static-www" {
     ]
   }
 }
-
-output "S3_URI" {
-  value = aws_s3_bucket.frontend_bucket.website_endpoint
-}

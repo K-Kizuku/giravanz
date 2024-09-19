@@ -29,6 +29,8 @@ resource "aws_cloudfront_distribution" "static-www" {
         default_ttl = 3600
         max_ttl = 86400
     }
+    aliases = [ "kizuku-hackathon.work" ]
+
 
     restrictions {
       geo_restriction {
@@ -36,9 +38,12 @@ resource "aws_cloudfront_distribution" "static-www" {
           locations = [ "JP" ]
       }
     }
-    viewer_certificate {
-        cloudfront_default_certificate = true
-    }
+  viewer_certificate {
+    acm_certificate_arn = "arn:aws:acm:us-east-1:290517700846:certificate/5a667b8a-ef44-4e0d-a72e-68a4fffa6238"
+    ssl_support_method  = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2019"
+  }
+    
 }
 
 resource "aws_cloudfront_origin_access_identity" "static-www" {}
