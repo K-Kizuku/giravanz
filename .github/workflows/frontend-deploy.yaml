@@ -41,7 +41,7 @@ jobs:
       # ビルドされたファイルをS3にアップロード
       - name: Upload to S3
         run: |
-          aws s3 sync ./dist ${{ secrets.AWS_S3_BACKET_NAME }} --delete
+          aws s3 sync ./frontend/dist ${{ secrets.AWS_S3_BACKET_NAME }} --delete
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
